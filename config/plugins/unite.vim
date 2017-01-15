@@ -134,7 +134,7 @@ let g:unite_source_menu_menus.StatusCodeDefinitions.command_candidates = [
     \['➤ 504 Gateway Timeout                                            ', 'echo "Gateway Timeout"'],
     \['➤ 505 HTTP Version Not Supported                                 ', 'echo "HTTP Version Not Supported"'],
     \]
-nnoremap <silent><leader>sc :Unite -silent -winheight=17 -start-insert menu:StatusCodeDefinitions<CR>
+" nnoremap <silent><leader>sc :Unite -silent -winheight=17 -start-insert menu:StatusCodeDefinitions<CR>
 let g:unite_source_grep_max_candidates = 200
 if executable('hw')
     " Use hw (highway)
@@ -181,9 +181,9 @@ endif
 let g:unite_source_rec_async_command =
             \ ['ag', '--follow', '--nocolor', '--nogroup',
             \  '--hidden', '-g', '']
-nnoremap <silent><leader>ufa :<C-u>Unite -no-split -buffer-name=Mixed -start-insert file file_mru file_rec buffer<cr>
-nnoremap <silent><leader>ufr :<C-u>Unite -buffer-name=files file_rec/async:!<cr>
-nnoremap <silent><leader>ufg :<C-u>Unite -buffer-name=git-repo file_rec/git<cr>
+" nnoremap <silent><leader>ufa :<C-u>Unite -no-split -buffer-name=Mixed -start-insert file file_mru file_rec buffer<cr>
+" nnoremap <silent><leader>ufr :<C-u>Unite -buffer-name=files file_rec/async:!<cr>
+nnoremap <silent><leader>pf :<C-u>Unite -buffer-name=git-repo file_rec/git<cr>
 call unite#custom#profile('file_rec/async,file_rec/git', 'context', {
             \   'start_insert' : 1,
             \   'quit'         : 1,
@@ -192,45 +192,46 @@ call unite#custom#profile('file_rec/async,file_rec/git', 'context', {
             \   'winheight'    : 20,
             \ })
 call unite#custom#source('file_rec/async', 'ignore_globs',['*.png','.git/','*.ttf'])
-nnoremap <silent><leader>uf  :<C-u>Unite -no-split -buffer-name=files -start-insert file<cr>
-nnoremap <silent><leader>ufm :<C-u>Unite -no-split -buffer-name=mru   -start-insert file_mru<cr>
-nnoremap <silent><leader>ubf :<C-u>Unite -buffer-name=buffer  buffer<cr>
-nnoremap <silent><leader>utb :<C-u>Unite -buffer-name=buffer_tab  buffer_tab<cr>
+" nnoremap <silent><leader>uf  :<C-u>Unite -no-split -buffer-name=files -start-insert file<cr>
+nnoremap <silent><leader>fr :<C-u>Unite -no-split -buffer-name=mru   -start-insert file_mru<cr>
+nnoremap <silent><leader>bb :<C-u>Unite -buffer-name=buffer  buffer<cr>
+" nnoremap <silent><leader>utb :<C-u>Unite -buffer-name=buffer_tab  buffer_tab<cr>
 call unite#custom#profile('buffer,buffer_tab', 'context', {
             \   'start_insert' : 0,
             \   'quit'         : 1,
             \   'keep_focus'   : 1,
             \ })
-nnoremap <silent><leader>um  :<C-u>Unite -start-insert mapping<CR>
-nnoremap <C-h>  :<C-u>Unite -start-insert help<CR>
-nnoremap <silent> g<C-h>  :<C-u>UniteWithCursorWord help<CR>
+nnoremap <silent><leader>?  :<C-u>Unite -start-insert mapping<CR>
+" nnoremap <C-h>  :<C-u>Unite -start-insert help<CR>
+" nnoremap <silent> g<C-h>  :<C-u>UniteWithCursorWord help<CR>
 "" Tag search
 """ For searching the word in the cursor in tag file
-nnoremap <silent><leader>f :<c-u>Unite tag/include:<C-R><C-w><CR>
-nnoremap <silent><leader>ff :<c-u>Unite tag/include -start-insert<CR>
+" nnoremap <silent><leader>f :<c-u>Unite tag/include:<C-R><C-w><CR>
+nnoremap <silent><leader>ss :<c-u>Unite tag/include -start-insert<CR>
 "" grep dictionay
 """ For searching the word in the cursor in the current directory
-nnoremap <silent><leader>v :Unite -auto-preview -no-split grep:.::<C-R><C-w><CR>
+" nnoremap <silent><leader>v :Unite -auto-preview -no-split grep:.::<C-R><C-w><CR>
 nnoremap <space>/ :Unite -auto-preview grep:.<cr>
 """ For searching the word handin
-nnoremap <silent><leader>vs :Unite -auto-preview -no-split grep:.<CR>
+" nnoremap <silent><leader>vs :Unite -auto-preview -no-split grep:.<CR>
 """ For searching the word in the cursor in the current buffer
-noremap <silent><leader>vf :Unite -auto-preview -no-split grep:%::<C-r><C-w><CR>
+" noremap <silent><leader>vf :Unite -auto-preview -no-split grep:%::<C-r><C-w><CR>
 """ For searching the word in the cursor in all opened buffer
-noremap <silent><leader>va :Unite -auto-preview -no-split grep:$buffers::<C-r><C-w><CR>
-nnoremap <silent><Leader>bl :<C-u>Unite -start-insert -buffer-name=buffer buffer<cr>
+" noremap <silent><leader>va :Unite -auto-preview -no-split grep:$buffers::<C-r><C-w><CR>
+nnoremap <silent><Leader>bb :<C-u>Unite -start-insert -buffer-name=buffer buffer<cr>
 "" outline
-nnoremap <silent><leader>o :<C-u>Unite -buffer-name=outline -start-insert -auto-preview -no-split outline<cr>
-"" Line search
-nnoremap <silent><leader>l :Unite line -start-insert  -auto-preview -no-split<CR>
+nnoremap <silent><leader>sj :<C-u>Unite -buffer-name=outline -start-insert -auto-preview -no-split outline<cr>
+nnoremap <silent>sl :<C-u>Unite -buffer-name=outline -start-insert -auto-preview -no-split outline<cr>
+"" Line search swiper
+nnoremap <silent><leader>sw :Unite line -start-insert  -auto-preview -no-split<CR>
 "" Yank history
 nnoremap <silent><leader>y :<C-u>Unite -no-split -buffer-name=yank history/yank<cr>
 " search plugin
 " :Unite neobundle/search
 "for Unite menu{
-nnoremap <silent><leader>ug :Unite -silent -start-insert menu:git<CR>
-nnoremap <silent><Leader>ls :Unite -silent -ignorecase -winheight=17 -start-insert menu:MyStarredrepos<CR>
-nnoremap <silent><Leader>lm :Unite -silent -ignorecase -winheight=17 -start-insert menu:MpvPlayer<CR>
+nnoremap <silent><leader>gu :Unite -silent -start-insert menu:git<CR>
+nnoremap <silent><Leader>ag :Unite -silent -ignorecase -winheight=17 -start-insert menu:MyStarredrepos<CR>
+" nnoremap <silent><Leader>lm :Unite -silent -ignorecase -winheight=17 -start-insert menu:MpvPlayer<CR>
 call zvim#util#loadMusics()
 augroup unite_buffer_feature
     autocmd FileType unite call s:unite_my_settings()
@@ -241,10 +242,10 @@ function! s:unite_my_settings()
     " Play nice with supertab
     let b:SuperTabDisabled=1
     " Enable navigation with control-j and control-k in insert mode
-    imap <buffer> <C-n>   <Plug>(unite_select_next_line)
-    nmap <buffer> <C-n>   <Plug>(unite_select_next_line)
-    imap <buffer> <C-p>   <Plug>(unite_select_previous_line)
-    nmap <buffer> <C-p>   <Plug>(unite_select_previous_line)
+    imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+    nmap <buffer> <C-j>   <Plug>(unite_select_next_line)
+    imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+    nmap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 
 
     imap <buffer> jj      <Plug>(unite_insert_leave)

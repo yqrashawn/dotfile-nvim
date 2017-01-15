@@ -35,6 +35,7 @@ endfunction
 
 function! SpaceVim#layers#tools#config() abort
     nnoremap <silent> <F7> :MundoToggle<CR>
+    nnoremap <silent> <leader>au :MundoToggle<CR>
     augroup rainbow_lisp
         autocmd!
         autocmd FileType lisp,clojure,scheme,java RainbowParentheses
@@ -44,14 +45,15 @@ function! SpaceVim#layers#tools#config() abort
     " List of colors that you do not want. ANSI code or #RRGGBB
     let g:rainbow#blacklist = [233, 234]
     nnoremap <Leader>fz :FZF<CR>
-    vnoremap <silent> <C-l> <Esc>:Ydv<CR>
-    nnoremap <silent> <C-l> <Esc>:Ydc<CR>
+    vnoremap <silent> ,d <Esc>:Ydv<CR>
+    nnoremap <silent> ,d <Esc>:Ydc<CR>
     map <unique> <Leader>td <Plug>TaskList
     noremap <silent> <F8> :TlistToggle<CR>
     function! OpenOrCloseNERDTree() abort
         exec 'normal! A'
     endfunction
     noremap <silent> <F9> :NERDTreeToggle<CR>
+    noremap <silent> se :NERDTreeToggle<CR>
     let g:NERDTreeWinPos='right'
     let g:NERDTreeWinSize=31
     let g:NERDTreeChDirMode=1

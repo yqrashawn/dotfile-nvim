@@ -4,11 +4,11 @@ set cpo&vim
 let g:unite_source_menu_menus =
             \ get(g:,'unite_source_menu_menus',{})
 let g:unite_source_menu_menus.CustomKeyMaps = {'description':
-            \ 'Custom mapped keyboard shortcuts                   [unite]<SPACE>'}
+            \ 'Custom mapped keyboard shortcuts                   <leader>am'}
 let g:unite_source_menu_menus.CustomKeyMaps.command_candidates =
             \ get(g:unite_source_menu_menus.CustomKeyMaps,'command_candidates', [])
 let g:unite_source_menu_menus.MyStarredrepos = {'description':
-            \ 'All github repos starred by me                   <leader>ls'}
+            \ 'All github repos starred by me                   <leader>ag'}
 let g:unite_source_menu_menus.MyStarredrepos.command_candidates =
             \ get(g:unite_source_menu_menus.MyStarredrepos,'command_candidates', [])
 let g:unite_source_menu_menus.MpvPlayer = {'description':

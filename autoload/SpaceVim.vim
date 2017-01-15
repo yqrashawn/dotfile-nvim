@@ -46,7 +46,7 @@ let g:spacevim_windows_leader          = 's'
 ""
 " Unite work flow leader of SpaceVim, default is `f`, set to empty to disable
 " this feature, or you can set to other char.
-let g:spacevim_unite_leader            = 'f'
+let g:spacevim_unite_leader            = ''
 let g:spacevim_neobundle_installed     = 0
 let g:spacevim_dein_installed          = 0
 let g:spacevim_vim_plug_installed      = 0
@@ -297,7 +297,7 @@ endfunction
 
 
 function! SpaceVim#welcome() abort
-    VimFiler
+    " VimFiler " disable startup Vimfiler
     wincmd p
     Startify
 endfunction

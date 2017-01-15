@@ -13,10 +13,10 @@ function! SpaceVim#layers#edit#plugins() abort
 endfunction
 
 function! SpaceVim#layers#edit#config() abort
-    let g:multi_cursor_next_key='<C-j>'
-    let g:multi_cursor_prev_key='<C-k>'
+    let g:multi_cursor_next_key='<C-n>'
+    let g:multi_cursor_prev_key='<C-p>'
     let g:multi_cursor_skip_key='<C-x>'
-    let g:multi_cursor_quit_key='<Esc>'
+    let g:multi_cursor_quit_key='<C-g>'
     let g:user_emmet_install_global = 0
     let g:user_emmet_leader_key='<C-e>'
     let g:user_emmet_mode='a'
@@ -25,8 +25,10 @@ function! SpaceVim#layers#edit#config() abort
                 \      'extends' : 'html',
                 \  },
                 \}
-    noremap <SPACE> <Plug>(wildfire-fuel)
-    vnoremap <C-SPACE> <Plug>(wildfire-water)
+    " noremap <SPACE> <Plug>(wildfire-fuel)
+    " vnoremap <C-SPACE> <Plug>(wildfire-water)
+    noremap <leader>v <Plug>(wildfire-fuel)
+    vnoremap V <Plug>(wildfire-water)
     let g:wildfire_objects = ["i'", 'i"', 'i)', 'i]', 'i}', 'ip', 'it']
-    map <Leader><Leader> <Plug>(easymotion-prefix)
+    map <Leader>j <Plug>(easymotion-prefix)
 endfunction
