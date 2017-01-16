@@ -22,6 +22,7 @@ function! SpaceVim#default#SetOptions() abort
     " begining start delete the char you just typed in if you do not use set
     " nocompatible ,you need this
     set backspace=indent,eol,start
+    set smartcase
 
     " Shou number and relativenumber
     " set relativenumber

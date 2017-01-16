@@ -13,3 +13,4 @@ function! SpaceVim#mapping#def(type,key,value,desc,...) abort
                 \. a:key
     let cmd = len(a:000) > 0 ? a:000[0] : a:value
     call add(g:unite_source_menu_menus.CustomKeyMaps.command_candidates, [description,cmd])
+endfunction

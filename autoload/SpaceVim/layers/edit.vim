@@ -17,6 +17,8 @@ function! SpaceVim#layers#edit#config() abort
     let g:multi_cursor_prev_key='<C-p>'
     let g:multi_cursor_skip_key='<C-x>'
     let g:multi_cursor_quit_key='<C-g>'
+    let g:NERDSpaceDelims = 1
+
     let g:user_emmet_install_global = 0
     let g:user_emmet_leader_key='<C-e>'
     let g:user_emmet_mode='a'
