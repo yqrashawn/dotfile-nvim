@@ -330,35 +330,35 @@ function! SpaceVim#default#SetMappings() abort
     nnoremap <silent><M-Right> :<C-U>call <SID>tobur("bnext")<CR>
     nnoremap <silent><M-Left> :<C-U>call <SID>tobur("bprev")<CR>
 
-    " what the fuck is this
-    "qqmsg hot key
-    " nnoremap <silent><M-x> :call chat#qq#OpenMsgWin()<CR>
-    "weixin hot key
-    " nnoremap <silent><M-w> :call chat#weixin#OpenMsgWin()<CR>
-    " call SpaceVim#mapping#def('nnoremap <silent>','<M-c>',':call chat#chatting#OpenMsgWin()<cr>','Open chatting room','call chat#chatting#OpenMsgWin()')
+    " call SpaceVim#mapping#def('nnoremap <silent>','<M-x>',':call chat#qq#OpenMsgWin()<cr>',
+                " \ 'Open qq chatting room','call chat#chatting#OpenMsgWin()')
+    " call SpaceVim#mapping#def('nnoremap <silent>','<M-w>',':call chat#weixin#OpenMsgWin()<cr>',
+                " \ 'Open weixin chatting room','call chat#chatting#OpenMsgWin()')
+    " call SpaceVim#mapping#def('nnoremap <silent>','<M-c>',':call chat#chatting#OpenMsgWin()<cr>',
+                " \ 'Open chatting room','call chat#chatting#OpenMsgWin()')
 
     call SpaceVim#mapping#def('nnoremap <silent>','g=',':call zvim#format()<cr>','format current buffer','call zvim#format')
 
     " call SpaceVim#mapping#def('vnoremap', '<Leader>S', "y:execute @@<CR>:echo 'Sourced selection.'<CR>",
-    "             \ 'Sourced selection.',
-    "             \ "echo 'Use <leader>S to sourced selection.'")
+                " \ 'Sourced selection.',
+                " \ "echo 'Use <leader>S to sourced selection.'")
     " call SpaceVim#mapping#def('nnoremap','<Leader>S',"^vg_y:execute @@<CR>:echo 'Sourced line.'<CR>",'Source line',
-    "             \ "echo 'Use <leader>S to sourced line.'")
+                " \ "echo 'Use <leader>S to sourced line.'")
 
-    call SpaceVim#mapping#def('nnoremap <silent>', '<C-c>', ':<c-u>call zvim#util#CopyToClipboard()<cr>',
-                \ 'Copy buffer absolute path to X11 clipboard','call zvim#util#CopyToClipboard()')
-    " call SpaceVim#mapping#def('nnoremap <silent>', '<Leader><C-c>',
-    "             \ ':<c-u>call zvim#util#CopyToClipboard(1)<cr>',
-    "             \ 'Yank the github link of current file to X11 clipboard',
-    "             \ 'call zvim#util#CopyToClipboard(1)')
-    " call SpaceVim#mapping#def('nnoremap <silent>', '<Leader><C-l>',
-    "             \ ':<c-u>call zvim#util#CopyToClipboard(2)<cr>',
-    "             \ 'Yank the github link of current line to X11 clipboard',
-    "             \ 'call zvim#util#CopyToClipboard(2)')
-    " call SpaceVim#mapping#def('vnoremap <silent>', '<Leader><C-l>',
-    "             \ ':<c-u>call zvim#util#CopyToClipboard(3)<cr>',
-    "             \ 'Yank the github link of current selection to X11 clipboard',
-    "             \ 'call zvim#util#CopyToClipboard(3)')
+    " call SpaceVim#mapping#def('nnoremap <silent>', '<C-c>', ':<c-u>call zvim#util#CopyToClipboard()<cr>',
+                " \ 'Copy buffer absolute path to X11 clipboard','call zvim#util#CopyToClipboard()')
+"     call SpaceVim#mapping#def('nnoremap <silent>', '<Leader><C-c>',
+"                 \ ':<c-u>call zvim#util#CopyToClipboard(1)<cr>',
+"                 \ 'Yank the github link of current file to X11 clipboard',
+"                 \ 'call zvim#util#CopyToClipboard(1)')
+"     call SpaceVim#mapping#def('nnoremap <silent>', '<Leader><C-l>',
+"                 \ ':<c-u>call zvim#util#CopyToClipboard(2)<cr>',
+"                 \ 'Yank the github link of current line to X11 clipboard',
+"                 \ 'call zvim#util#CopyToClipboard(2)')
+"     call SpaceVim#mapping#def('vnoremap <silent>', '<Leader><C-l>',
+"                 \ ':<c-u>call zvim#util#CopyToClipboard(3)<cr>',
+"                 \ 'Yank the github link of current selection to X11 clipboard',
+"                 \ 'call zvim#util#CopyToClipboard(3)')
     call SpaceVim#mapping#def('nnoremap <silent>', '<Tab>', ':wincmd w<CR>', 'Switch to next window or tab','wincmd w')
     call SpaceVim#mapping#def('nnoremap <silent>', '<S-Tab>', ':wincmd p<CR>', 'Switch to previous window or tab','wincmd p')
     call SpaceVim#mapping#def('nnoremap <silent>', 'q', ':<C-u>call zvim#util#SmartClose()<cr>',
