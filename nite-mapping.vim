@@ -5,12 +5,13 @@ source ~/.config/nvim/myautocmd.vim
 " nnoremap <silent><leader>fa :<C-u>Unite -buffer-name=files file_rec/async:!<cr>
 nnoremap <silent> <leader>?  :<C-u>Unite mapping -silent<CR>
 nnoremap <silent> <leader>mt  :<C-u>Unite tab -select=`tabpagenr()-1`<CR>
+nnoremap <silent> <leader><leader>  :<C-u>Unite -silent<CR>
 
 " Unite window mappings {{{
 augroup unite_buffer_feature
     autocmd FileType unite call s:unite_settings()
 augroup END
-" autocmd FileType unite call s:unite_settings()
+autocmd FileType unite call s:unite_settings()
 function! s:unite_settings() abort "{{{
   silent! nunmap <buffer> <Space>
   silent! nunmap <buffer> <C-h>
@@ -50,7 +51,8 @@ endfunction "}}}
   nnoremap <silent> <leader>rl  :<C-u>Denite -resume<CR>
   nnoremap <silent> <leader>ff  :<C-u>Denite file_rec<CR>
   " nnoremap <silent> <leader>d  :<C-u>Denite directory_rec -default-action=cd<CR>
-  nnoremap <silent> <leader>fr  :<C-u>Denite buffer file_old<CR>
+  nnoremap <silent> <leader>fr  :<C-u>Denite file_old<CR>
+  nnoremap <silent> <leader>bb  :<C-u>Denite buffer<CR>
   nnoremap <silent> <leader>fq  :<C-u>Denite quickfix -buffer-name=list<CR>
   nnoremap <silent> <leader>skf  :<C-u>Denite grep -buffer-name=grep<CR>
   " nnoremap <silent> <leader>l  :<C-u>Denite location_list -buffer-name=list<CR>

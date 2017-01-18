@@ -33,12 +33,10 @@ call vimfiler#custom#profile('default', 'context', {
 	\ })
 
 " keymap
-nnoremap <silent> <leader>e        :<C-u>execute
-  \ 'VimFiler -winwidth=25 -direction=topleft'<CR>
-  " \ 'VimFiler -winwidth=25 -direction=topleft -buffer-name='.block#project()<CR>
+nnoremap <silent> <C-p>        :<C-u>execute
+  \ 'VimFiler -winwidth=25 -direction=topleft -buffer-name='.block#project()<CR>
 nnoremap <silent> <leader>E        :<C-u>execute
-  \ 'VimFiler -find -winwidth=25 -direction=topleft'<CR>
-  " \ 'VimFiler -find -winwidth=25 -direction=topleft -buffer-name='.block#project()<CR>
+  \ 'VimFiler -find -winwidth=25 -direction=topleft -buffer-name='.block#project()<CR>
 
 autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
 
