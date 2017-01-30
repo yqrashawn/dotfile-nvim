@@ -24,6 +24,12 @@ Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
 Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'rhysd/vim-operator-surround'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'kmnk/vim-unite-giti'
+Plug 'Shougo/unite-outline'
+Plug 'tsukkee/unite-tag'
+Plug 'Shougo/neomru.vim'
+Plug 'majutsushi/tagbar', {'on': ['TagbarToggle']}
 call plug#end()
 " Plug
 cmap ;pi PlugInstall<cr>
@@ -131,3 +137,33 @@ omap af <Plug>(textobj-multiblock-a)
 omap if <Plug>(textobj-multiblock-i)
 xmap af <Plug>(textobj-multiblock-a)
 xmap if <Plug>(textobj-multiblock-i)
+
+" vim-gutentags
+if executable('ctags')
+  let g:gutentags_cache_dir = $HOME.'/tags'
+  let g:gutentags_generate_on_missing = 1
+  let g:gutentags_generate_on_new = 1
+  let gutentags_generate_on_write = 0
+  let g:gutentags_auto_set_tags = 1
+  let g:gutentags_exclude=[".git","node_modules",
+        \ "log","vendor",
+        \ "build",".vim",
+        \".el","tmp","temp",
+        \".css",".html",
+        \".min.js","assets",
+        \"study","release","gltf",
+        \".rvt","model","node_models",
+        \".gbim"]
+  cmap ;tu GutentagsUpdate<cr>
+  nnoremap <leader>tT :<C-u>GutentagsToggleEnabled<cr>
+endif
+
+" neomru
+let g:neomru#do_validate = 0
+
+" tagbar
+nnoremap <silent><leader>bi :TagbarToggle<CR>
+let g:tagbar_iconchars = ['▷', '◢']
+let g:tagbar_map_openfold = ['l', '+', 'zo']
+let g:tagbar_map_closefold = ['h', '-', 'zc']
+let g:tagbar_updateonsave_maxlines=10000

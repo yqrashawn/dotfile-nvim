@@ -63,23 +63,24 @@ let &tabline='%!Tabline()'
 " }}}
 
 " Statusline {{{
-let s:stl  = " %7*%{&paste ? '=' : ''}%*"         " Paste symbol
-let s:stl .= "%4*%{&readonly ? '' : '#'}%*"       " Modifide symbol
-let s:stl .= '%6*%{block#mode()}'                 " Readonly symbol
-let s:stl .= '%*%n'                               " Buffer number
-let s:stl .= "%6*%{block#modified('+')}%0*"       " Write symbol
-let s:stl .= ' %1*%{block#filename()}%*'          " Filename
-let s:stl .= ' %<'                                " Truncate here
-let s:stl .= '%( %{block#branch()} %)'           " Git branch name
-let s:stl .= '%(/ %{anzu#search_status()} %)'     " Search position
-let s:stl .= "%4*%(%{block#trails('WS:%s')} %)"  " Whitespace
-let s:stl .= '%(%{block#syntax()} %)%*'           " syntax check
-let s:stl .= '%='                                 " Align to right
-let s:stl .= '%{block#format()} %4*%*'           " File format
-let s:stl .= '%( %{&fenc} %)'                     " File encoding
-let s:stl .= '%4*%*%( %{&ft} %)'                 " File type
-let s:stl .= '%3*%2* %l/%2c%4p%% '               " Line and column
-" let s:stl .= "%{gutentags#statusline('[*]')}%*"
+let s:stl  = " %7*%{&paste ? '=' : ''}%*"              " Paste symbol
+let s:stl .= "%4*%{&readonly ? '' : '#'}%*"            " Modifide symbol
+let s:stl .= '%6*%{block#mode()}'                      " Readonly symbol
+let s:stl .= '%*%n'                                    " Buffer number
+let s:stl .= "%6*%{block#modified('+')}%0*"            " Write symbol
+let s:stl .= ' %1*%{block#filename()}%*'               " Filename
+let s:stl .= ' %<'                                     " Truncate here
+let s:stl .= '%( %{block#branch()} %)'                " Git branch name
+let s:stl .= '%(/ %{anzu#search_status()} %)'          " Search position
+let s:stl .= "%4*%(%{block#trails('WS:%s')} %)"       " Whitespace
+let s:stl .= '%(%{block#syntax()} %)%*'                " syntax check
+let s:stl .= '%='                                      " Align to right
+" let s:stl .= "%{tagbar#currenttag('[%s] ','')}%4*%*"  " tagbar tag
+let s:stl .= '%{block#format()} %4*%*'                " File format
+let s:stl .= '%( %{&fenc} %)'                          " File encoding
+let s:stl .= '%4*%*%( %{&ft} %)'                      " File type
+let s:stl .= '%3*%2* %l/%2c%4p%% '                    " Line and column
+let s:stl .= "%{gutentags#statusline('[*]')}%*"
 
 " Non-active Statusline {{{
 let s:stl_nc = " %{block#mode('⚒', 'Z')}%n"    " Readonly & buffer

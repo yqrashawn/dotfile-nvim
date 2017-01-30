@@ -71,6 +71,7 @@ let insert_mode_mappings = [
 	\  ['<Up>', '<denite:assign_previous_text>', 'noremap'],
 	\  ['<Down>', '<denite:assign_next_text>', 'noremap'],
 	\  ['<C-Y>', '<denite:redraw>', 'noremap'],
+	\  ['<C-g>', '<denite:quit>', 'noremap'],
 	\ ]
 
 let normal_mode_mappings = [
@@ -82,6 +83,8 @@ let normal_mode_mappings = [
 	\   ['sg', '<denite:do_action:vsplit>', 'noremap'],
 	\   ['sv', '<denite:do_action:split>', 'noremap'],
 	\   ['sc', '<denite:quit>', 'noremap'],
+	\   ['q', '<denite:quit>', 'noremap'],
+	\   ['<C-g>', '<denite:quit>', 'noremap'],
 	\   ['r', '<denite:redraw>', 'noremap'],
 	\ ]
 
